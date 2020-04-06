@@ -1,0 +1,15 @@
+<apex:page controller="AccountController" > 
+    <h1>Hello World</h1> 
+    <apex:form >
+    <apex:pageBlock title="Congratulations {!$User.FirstName}">
+            You belong to Account Name: <apex:inputField value="{!accounts[0].name}"/>
+            
+        </apex:pageBlock>
+    <apex:pageBlock title="A Block Title">
+        <apex:pageBlockSection title="A Section Title">
+            
+            I'm three components deep!
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+        </apex:form>
+</apex:page>

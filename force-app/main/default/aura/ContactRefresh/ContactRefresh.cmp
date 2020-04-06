@@ -1,0 +1,15 @@
+<aura:component implements="force:appHostable,flexipage:availableForRecordHome">
+	<!--forceRefreshViewFireComp-->
+    <aura:attribute name="fieldList" type="List" default="LastName, FirstName" />
+    <lightning:card title="Create Contact">
+        <div class="slds-m-horizontal_small">
+            <lightning:recordForm 
+                                  objectApiName="Contact" 
+                                  layoutType="Compact" 
+                                  columns="2"
+                                  mode="edit"
+                                  onsubmit="{!c.createContact}" />
+        </div>  
+    </lightning:card> 
+    
+</aura:component>

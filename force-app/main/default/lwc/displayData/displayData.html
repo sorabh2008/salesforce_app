@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Datatable Example" icon-name="custom:custom63">
+        <template for:each={result} for:item="item">
+        <div key={item.statecode} class="slds-m-around_medium">
+           <span> {item.state} </span>   
+           <span> {item.active} </span>  
+           <span> {item.confirmed} </span>  
+        </div>
+    </template>
+    </lightning-card>
+</template>
