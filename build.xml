@@ -11,7 +11,11 @@
     <condition property="sf.password" value=""> <not> <isset property="sf.password"/> </not> </condition>
     <condition property="sf.sessionId" value=""> <not> <isset property="sf.sessionId"/> </not> </condition>
 
-    
+    <taskdef resource="com/salesforce/antlib.xml" uri="antlib:com.salesforce">
+        <classpath>
+            <pathelement location="./lib/ant-salesforce.jar" />        	
+        </classpath>
+    </taskdef>
 	
     <!-- Test out deploy and retrieve verbs for package 'mypkg' -->
     <target name="test">
