@@ -26,7 +26,12 @@ export default class DisplayData extends LightningElement {
     
     // gets called after rendering this and all child components.
     renderedCallback() {
-        console.log("You can now see me and my child components on browser");   
+        console.log("You can now see me and my (Display Data) child components on browser");   
+    }
+    
+    // called when component is deleted from DOM
+    disconnectedCallback() {
+        console.log("Bye Bye from Display Data");   
     }
     
     fetchNews(){
