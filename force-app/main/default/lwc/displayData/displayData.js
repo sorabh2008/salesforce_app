@@ -8,10 +8,27 @@ import retriveNews from "@salesforce/apex/newsController1.retriveNews";
 export default class DisplayData extends LightningElement {
     @track result = []
     @track columns = COLS;
+    @track isLoadingComponent = false;
+    // 1st in lifecycle
+    constructor() {
+        console.log("Hi! I am constructor of Display Data");
+        this.isLoadingComponent = true;
+    }
     
+    // gets called just before rendering on DOM
     connectedCallback(){
         this.fetchNews();
+        console.log("Hi! I am connectedCallback of Display Data.");
+        if(result !== null) {
+            this.isLoadingComponent = false;
+        }
     }
+    
+    // gets called after rendering this and all child components.
+    renderedCallback() {
+        console.log("You can now see me and my child components on browser");   
+    }
+    
     fetchNews(){
         
         retriveNews().then(response=>{
